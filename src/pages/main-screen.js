@@ -40,7 +40,7 @@ const MainScreen = () => {
 				</div>
 				<div className="flex-none gap-2">
 					<div className="form-control">
-						<input type="text" placeholder="Search" className="input input-bordered" value={search} onChange={(e) => setSearch(e.target.value)} />
+						<input type="text" placeholder="Ingredients?" className="input input-bordered" value={search} onChange={(e) => setSearch(e.target.value)} />
 					</div>
 					<div className="dropdown dropdown-end mr-6 ml-3">
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -64,7 +64,7 @@ const MainScreen = () => {
 				{search === null || search === "" ? (<p>Type in search bar...</p>) : (<>
 					{data ? (
 						data.map((item) => (
-							<CardComponent title={item.title} imageUrl={item.featured_image} ingredients={item.ingredients}></CardComponent>
+							<CardComponent title={item.title} imageUrl={item.featured_image} ingredients={item.ingredients} url={item.source_url}></CardComponent>
 						))
 					) : (
 						<p>Loading...</p>
